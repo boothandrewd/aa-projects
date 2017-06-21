@@ -1,0 +1,48 @@
+<form action= "<%= dogs_url %>" method="POST">
+  <% if dog.persisted? %>
+  <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+
+  <label for="dog_name">Name:</label>
+  <input id="dog_name" type="text" name="dog[name]" value="<%= @dog.name %>">
+
+  <br>
+
+  <label for="dog_sex">Sex:</label>
+  M <input id="dog_sex"
+           type="radio"
+           name="dog[sex]"
+           value="M"
+           <%= "checked" if @dog.sex == 'M' %> >
+  F <input id="dog_sex"
+           type="radio"
+           name="dog[sex]"
+           value="F"
+           <%= "checked" if @dog.sex == 'F' %> >
+
+  <br>
+
+  <label for="dog_color">Color:</label>
+  <select id="dog_color" name="dog[color]">
+    <option disabled <%= dog.persisted? ? "" : "selected" %> >-- Please Choose a Color --</option>
+    <% Dog::VALID_COLORS.each do |color| %>
+      <option value="<%= color %>" <%= "selected" if @dog.color == color %>> <%= color %> </option>
+    <% end %>
+  </select>
+
+  <br>
+
+  <label for="dog_birth_date">Birth date:</label>
+  <input id="dog_birth_date" type="date" name="dog[birth_date]" value="<%= @dog.birth_date %>">
+
+  <br>
+
+  <label for="dog_description">Description:</label>
+  <textarea id="dog_description" name="dog[description]" rows="8" cols="80">
+    <%= @dog.description %>
+  </textarea>
+
+  <br>
+
+  <!-- <button type="submit" name="button"></button> -->
+</form>

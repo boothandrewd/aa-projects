@@ -1,0 +1,22 @@
+
+
+<form action="/dog_rental_requests" method="post">
+  <label for=""></label>
+  <select class="" name="">
+    <% dogs.each do |dog| %>
+      <option value="<%= dog.id %>"><%= dog.name %></option>
+    <% end %>
+  </select>
+
+  <br>
+
+  <label for=""></label>
+  <input type="date" name="" value="">
+
+  <br>
+
+  <label for=""></label>
+  <input type="date" name="" value="">
+
+  <br>
+</form>
