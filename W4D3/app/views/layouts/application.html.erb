@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>NinetyNineCatsDay1</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <h1>99 Cats</h1>
+
+  <br>
+
+  <% if current_user %>
+    <a href="/users/<%= current_user.id %>"><%= current_user.username %>'s Profile</a>
+    <form action="<%= session_url %>" method="post">
+      <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
+      <input type="hidden" name="_method" value="delete">
+      <input id="logout" type="submit" name="" value="Logout">
+    </form>
+  <% else %>
+    <!-- <form action="<%= session_url %>" method="get">
+      <input type="hidden" name="_method" value="delete">
+      <input id="logout" type="submit" name="" value="Logout">
+    </form> -->
+    <a href=" <%= new_session_url %> ">Log In</a>
+    <a href=" <%= new_user_url %> ">Sign Up</a>
+  <% end %>
+
+  <%= yield %>
+
+</body>
+</html>
