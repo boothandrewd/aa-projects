@@ -1,0 +1,22 @@
+<% action, method = if user.persisted? %>
+  <% [edit_user_path(user), 'patch'] %>
+<% else %>
+  <% [users_path, 'post'] %>
+<% end %>
+
+<form action"<%= action %>" method="post">
+  <%= hidden_form_action(method) %>
+  <%= auth_token %>
+
+  <label for="email">Email:</label>
+  <input id="email" type="text" name="user[email]" value="">
+
+  <br>
+
+  <label for="password">Password:</label>
+  <input type="password" name="user[password]" value="">
+
+  <br>
+
+  <input type="submit" value="Submit">
+</form>
