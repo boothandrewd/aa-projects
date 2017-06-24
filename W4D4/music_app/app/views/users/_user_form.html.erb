@@ -1,8 +1,10 @@
 <% action, method = if user.persisted? %>
-  <% [edit_user_path(user), 'patch'] %>
+  <% [edit_user_url(user), 'patch'] %>
 <% else %>
-  <% [users_path, 'post'] %>
+  <% [users_url, 'post'] %>
 <% end %>
+
+<%= render 'shared/errors' %>
 
 <form action"<%= action %>" method="post">
   <%= hidden_form_action(method) %>

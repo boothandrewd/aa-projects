@@ -7,6 +7,7 @@
 #  recording_type :string           default("studio"), not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  name           :string           not null
 #
 
 require 'test_helper'

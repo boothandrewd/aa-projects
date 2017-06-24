@@ -1,0 +1,29 @@
+<% action, method = if album.persisted? %>
+  <% [edit_album_url(album), 'patch'] %>
+<% else %>
+  <% [albums_url, 'post'] %>
+<% end %>
+
+<%= render 'shared/errors' %>
+
+<form action="<%= action %>" method="post">
+  <%= hidden_form_action(method) %>
+  <%= auth_token %>
+
+  <input type="hidden" name="album[band_id]" value="<%= params[:band_id] %>">
+
+  <label for="name">Name:</label>
+  <input type="text" name="album[name]" value="<%= album.name %>">
+
+  <br>
+
+  <label for="type">Type:</label>
+  <select name="type">
+    <option value="studio" <%= album.recording_type == 'studio' ? "selected" : "" %>>Studio</option>
+    <option value="live" <%= album.recording_type == 'live' ? "selected" : "" %>>Live</option>
+  </select>
+
+  <br><br>
+
+  <input type="submit">
+</form>

@@ -7,13 +7,14 @@
 #  recording_type :string           default("studio"), not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  name           :string           not null
 #
 
 class Album < ApplicationRecord
   validates :band_id, :recording_type, presence: true
 
   belongs_to :band
-  
-  has_many :songs,
+
+  has_many :tracks,
     dependent: :destroy
 end
