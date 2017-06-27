@@ -1,0 +1,6 @@
+<h1>r/all</h1>
+
+<% @subs.each do |sub| %>
+<%= link_to sub.title, sub_url(sub) %>
+<br>
+<% end %>

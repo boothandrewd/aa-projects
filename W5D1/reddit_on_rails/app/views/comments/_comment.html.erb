@@ -1,0 +1,15 @@
+
+
+
+<div class="entry unvoted"><p class="tagline"><a href="javascript:void(0)" class="expand" onclick="return togglecomment(this)">[–]</a><a href="https://www.reddit.com/user/Omnipotent_Goose" class="author may-blank id-t2_alsb5"><%= comment.author.username %></a><span class="userattrs"></span> <span class="score dislikes" title="6243">6243 points</span><span class="score unvoted" title="6244">6244 points</span><span class="score likes" title="6245">6245 points</span> <time title="Mon Jun 26 18:07:32 2017 UTC" datetime="2017-06-26T18:07:32+00:00" class="live-timestamp">5 hours ago</time>&nbsp;</p><form action="#" class="usertext warn-on-unload" onsubmit="return post_form(this, 'editusertext')" id="form-t1_djfea0799h"><input type="hidden" name="thing_id" value="t1_djfea07"><div class="usertext-body may-blank-within md-container "><div class="md">
+<p><%= comment.content %>
+<br>
+<% all_comments.each do |loop_comment| %>
+  <% if loop_comment.parent_comment_id == comment.id %>
+    <%= render 'comments/comment', comment: loop_comment, all_comments: all_comments %>
+  <% end %>
+<% end %>
+</p>
+</div>
+</div></form>
+<div class="reportform report-t1_djfea07"></div></div>
