@@ -1,0 +1,35 @@
+.space {
+  height: 50px;
+  background-color: gray;
+  width: 00px;
+}
+
+.little {
+  width: 50px;
+}
+
+.medium {
+  width: 100px;
+}
+
+.big {
+  width: 150px;
+}
+
+div {
+  display: flex;
+  align-items: flex-end;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 150px;
+}
