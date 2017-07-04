@@ -1,0 +1,52 @@
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;    // TODO
+  align-items: center;
+}
+
+.left-nav > ul,
+.right-nav > ul {
+  display: flex;
+  align-items: center;
+}
+
+.left-nav > ul > li {
+  margin-right: 30px;
+  padding: 5px;
+  border-radius: 3px;
+
+  font-family: $sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: inherit;
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.right-nav > ul > li {
+  margin-left: 5px;
+}
+
+.right-nav > ul > li:last-of-type {
+  border-radius: 3px;
+  height: 100%;
+  padding: 5px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.left-nav > ul > li:hover,
+.right-nav > ul > li:last-of-type:hover {
+  background-color: $lightest-gray;
+}
+
+.left-nav span {
+  margin-left: 10px;
+}
+
+
+.right-nav i {
+  font-size: 16px;
+}

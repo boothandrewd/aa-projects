@@ -1,0 +1,16 @@
+.section-nav {
+  display: flex;
+}
+
+.section-nav ul {
+  display: flex;
+  align-items: center;
+}
+
+.section-nav li {
+  justify-content: space-around;
+}
+
+.section-nav li:last-of-type {
+  text-decoration: underline;
+}
